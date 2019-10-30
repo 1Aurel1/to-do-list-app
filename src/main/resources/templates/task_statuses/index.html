@@ -1,0 +1,78 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout/main">
+
+<head>
+    <title>New Task</title>
+</head>
+
+<section layout:fragment="content">
+    <div class="container pt-5">
+        <a name="newStatus" id="newStatus" class="btn mt-5 btn-block btn-secondary" th:href="@{~/tasks/statuses/new}"
+           role="button">New Status</a>
+        <table class="table table-striped mt-3">
+            <thead class="thead-dark ">
+            <tr>
+                <th>Order</th>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="status : ${statuses}">
+                <td th:text="${status.position}"></td>
+                <td scope="row" th:text="${status.id}"></td>
+                <td th:text="${status.status}" th:id="'status'+${status.id}"></td>
+                <td class="p-1">
+                    <div class="btn-group " role="group" aria-label="actions">
+                        <button type="button" th:onclick="'setUpdatingStatus('+ ${status.id} +')'"
+                                class="btn btn-success" data-toggle="modal" data-target="#modelId">Edit
+                        </button>
+                        <button type="button" th:onclick="'deleteStatus(' + ${status.id} + ')'" class="btn btn-danger">
+                            Delete
+                        </button>
+                    </div>
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+
+        <!-- Modal for edit -->
+        <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Edit Status</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div id="updateStatusForm" class="modal-body" data-parsley-validate="">
+                        <div class="form-group">
+                            <label for="editstatusname">Status Name</label>
+                            <input type="text" required="" class="form-control" name="editstatusname"
+                                   id="editstatusname" placeholder="">
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button id="close" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" id="updateStatus" onclick="updateStatus()" class="btn btn-primary">Update
+                            Status
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</section>
+
+<section layout:fragment="bodyScripts">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script th:src="@{/js/statuses.js}"></script>
+</section>

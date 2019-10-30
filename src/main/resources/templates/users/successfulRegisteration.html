@@ -1,0 +1,25 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout/blank">
+
+<section layout:fragment="content">
+
+    <div class="container d-table h100">
+        <div class="row w-100 d-table-cell table-cell-center pb-5">
+            <h3 class="text-center" th:text="'Dear, ' + ${user.username}"></h3>
+            <p class="text-center">
+                Thank you for registrating. We have sent you an email at
+                "<span th:text="${user.email}"></span>"
+                with your registration token.
+            </p>
+            <p class="text-center">Please go to your email and click the link.</p>
+            <a class="btn btn-link w-100 text-center pb-5" th:href="@{~/users/login}" role="button">Login</a>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="bodyScripts" layout:fragment="bodyScripts">
+
+
+</section>

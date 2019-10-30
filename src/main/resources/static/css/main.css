@@ -1,0 +1,174 @@
+.priority-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+}
+
+.error {
+    color: red;
+}
+
+.priority-indicator-red {
+    background-color: red;
+}
+
+.priority-indicator-yellow {
+    background-color: yellow;
+}
+
+.priority-indicator-gray {
+    background-color: gray;
+}
+
+.mfp-content {
+    max-width: 600px;
+}
+
+ul {
+    min-height: 30px;
+}
+
+.color-red {
+    color: #ff00007d;
+}
+
+.status {
+    flex-wrap: nowrap !important;
+}
+
+.table-cell-center {
+    vertical-align: middle;
+}
+
+.h100 {
+    height: 100vh;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    height: 10px !important;
+    background-color: transparent;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #007bff63;
+    border-radius: 15px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #007bffe1;
+}
+
+
+.register-link a {
+    width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    .status .col {
+        min-width: 80%;
+        max-width: 80%;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .status .col {
+        min-width: 400px;
+        max-width: 400px;
+    }
+}
+
+
+/* footer */
+
+.site-footer {
+    min-height: 150px;
+    background-color: #f8f9fa !important;
+}
+
+
+/* Social links */
+
+.fa-css {
+    padding: 10px;
+
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+}
+
+.fa-css:hover {
+    opacity: 0.7;
+    text-decoration: none;
+    color: azure;
+}
+
+.fa-facebook-f {
+    background: #3B5998;
+    color: white;
+    width: 36px;
+}
+
+.fa-dribbble {
+    background: #ea4c89;
+    color: white;
+}
+
+.fa-linkedin {
+    background: #007bb5;
+    color: white;
+}
+
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+
+/* parsey css */
+
+input.parsley-success,
+select.parsley-success,
+textarea.parsley-success {
+    color: #468847;
+    background-color: #DFF0D8;
+    border: 1px solid #D6E9C6;
+}
+
+input.parsley-error,
+select.parsley-error,
+textarea.parsley-error {
+    color: #B94A48;
+    background-color: #F2DEDE;
+    border: 1px solid #EED3D7;
+}
+
+.parsley-errors-list {
+    margin: 2px 0 3px;
+    padding: 0;
+    list-style-type: none;
+    font-size: 0.9em;
+    line-height: 0.9em;
+    opacity: 0;
+    color: #B94A48;
+
+    transition: all .3s ease-in;
+    -o-transition: all .3s ease-in;
+    -moz-transition: all .3s ease-in;
+    -webkit-transition: all .3s ease-in;
+}
+
+.parsley-errors-list.filled {
+    opacity: 1;
+}
